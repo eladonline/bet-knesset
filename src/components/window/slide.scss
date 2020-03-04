@@ -1,0 +1,58 @@
+@import "@styleTools";
+.window-frame {
+  &[data-edit="true"] {
+    .window-frame_X {
+      color: white;
+      font-size: xx-large;
+      background: rgba($color: #000000, $alpha: 0.8);
+      text-align: center;
+      cursor: pointer;
+    }
+    .window-component {
+      overflow: auto;
+    }
+  }
+  .window-add-line {
+    color: white;
+    font-size: xx-large;
+    background: gray;
+    text-align: center;
+    cursor: pointer;
+  }
+  .window-frame__edit-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+    @include flex-column(center, center);
+    color: white;
+    font-size: xx-large;
+    &:hover {
+      opacity: 1;
+      background: rgba($color: #000000, $alpha: 0.8);
+    }
+  }
+  > header {
+    text-shadow: 1px 1px 1px black;
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    color: rgb(224, 185, 28);
+  }
+  .window-component {
+    position: relative;
+    border: 15px ridge brown;
+    &[data-side="true"] {
+      background-image: url("../../images/card_floor.jpg");
+      font-size: 33px;
+    }
+    background-image: url("../../images/frame.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+}

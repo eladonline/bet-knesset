@@ -1,0 +1,8 @@
+@import "@styleTools";
+.editHead {
+  @include flex-row(flex-start);
+  > div {
+    background: green;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,18 @@
+@import "@styleTools";
+
+.grid-global {
+  width: 100%;
+  @include grid(25% 1fr 25%, 100vh, 15px);
+  overflow: hidden;
+  .index-center {
+    .window-frame, .window-component {
+        height: 948px;
+    }   
+  }
+    .index-side {
+        @include grid(1fr, auto, 15px);
+        .window-frame, .window-component {
+            height: 400px;
+        }
+    }
+}

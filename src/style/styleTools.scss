@@ -1,0 +1,312 @@
+@import url("//fonts.googleapis.com/css?family=Secular+One|Varela+Round");
+
+$button-font-size: 16px !default;
+//App
+//////////////////////
+// general app declaration
+//////////////////////
+
+
+/////////////////
+// Mixins
+/////////////////
+
+////////////////////
+// flex-system
+////////////////////
+@mixin flex-row($justify: flex-start, $alignItems: flex-start) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin flex-column($justify: flex-start, $alignItems: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+////////////////////
+// grid-system
+////////////////////
+@mixin grid(
+  $template-cols: initial,
+  $template-rows: initial,
+  $gap: 10px,
+  $justify: initial,
+  $alignItems: initial,
+  $areas: initial
+) {
+  display: grid;
+  grid-template-columns: $template-cols;
+  grid-template-rows: $template-rows;
+  grid-gap: $gap;
+  justify-content: $justify;
+  align-items: $alignItems;
+  grid-template-areas: $areas;
+}
+// img import
+@mixin div-is-img($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  background-position: center;
+  @content;
+}
+// ////////////
+// responsive
+// ////////////
+// lanscape phone
+@mixin uptoSm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin uptoMd {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin xs {
+  @media (min-width: 566px) {
+    @content;
+  }
+}
+// tablets
+@mixin sm {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+// small desktop laptops lanscape tablets
+@mixin md {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+// wide screens
+@mixin lg {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+// medium desktop laptops
+@mixin xl {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+// /////////
+// Fonts
+// /////////
+%Secular {
+  font-family: Secular One, sans-serif;
+  font-weight: 400;
+}
+%Varela {
+  font-family: Varela Round, sans-serif;
+  font-weight: 400;
+}
+
+// ////////////////
+// selectors
+// /////////////
+%fs12 {
+  font-size: 12px;
+}
+%fs18 {
+  font-size: 14px;
+  line-height: 24px;
+  @include sm {
+    line-height: 18px;
+    font-size: 15px;
+  }
+  @include md {
+    line-height: 24px;
+    font-size: 18px;
+  }
+}
+%fs30 {
+  font-size: 20px;
+  line-height: 22px;
+  @include sm() {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  @include md {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+%fs32 {
+  font-size: 28px;
+  line-height: 30px;
+  @include sm() {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  @include md {
+    font-size: 32px;
+    line-height: 34px;
+  }
+}
+%fs14 {
+  font-size: 14px;
+}
+%fs16 {
+  font-size: 12px;
+  line-height: 18px;
+  @include md {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  @include lg {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+%fs20 {
+  font-size: 16px;
+  line-height: 18px;
+  @include sm {
+    font-size: 18px;
+    line-height: 19px;
+  }
+  @include md {
+    font-size: 20px;
+    line-height: 21px;
+  }
+}
+%fs23 {
+  font-size: 20px;
+  line-height: 22px;
+  @include sm {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  @include md {
+    font-size: 23px;
+    line-height: 24px;
+  }
+}
+%fs24 {
+  font-size: 20px;
+  line-height: 20px;
+  @include sm {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  @include md {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+%fs26 {
+  font-size: 20px;
+  @include sm {
+    font-size: 20px;
+  }
+  @include md {
+    font-size: 26px;
+  }
+}
+%fs40 {
+  font-size: 40px;
+  line-height: 42px;
+}
+%fs47 {
+  font-size: 31px;
+  line-height: 37px;
+  @include sm {
+    font-size: 40px;
+    line-height: 39px;
+  }
+  @include md {
+    font-size: 45px;
+    line-height: 44px;
+  }
+  @include xl {
+    font-size: 47px;
+    line-height: 46px;
+  }
+}
+%fs48 {
+  font-size: 32px;
+  line-height: 60px;
+  @include sm {
+    font-size: 44px;
+    line-height: 44px;
+  }
+  @include md {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+%fs60 {
+  font-size: 54px;
+  line-height: normal;
+  @include sm {
+    font-size: 56px;
+    line-height: 60px;
+  }
+  @include md {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+%fs62 {
+  font-size: 54px;
+  line-height: normal;
+  @include sm {
+    font-size: 58px;
+  }
+  @include md {
+    font-size: 62px;
+    line-height: 62px;
+  }
+}
+%btnBase {
+  @extend %Varela;
+  outline: none;
+  @extend %fs16;
+  @include flex-row(center, center);
+  border-radius: 6px;
+  height: 43px;
+  padding: 0 23px;
+  border: none;
+  cursor: pointer;
+}
+%btnBase-noFontSize {
+  @extend %Varela;
+  outline: none;
+  @include flex-row(center, center);
+  border-radius: 6px;
+  height: 43px;
+  padding: 0 23px;
+  border: none;
+  cursor: pointer;
+}
+%btnDark {
+  @extend %btnBase;
+  width: 130px;
+  @include sm {
+    width: 150px;
+  }
+  transition: 250ms linear;
+  color: white;
+}
+button:disabled {
+  pointer-events: none;
+}
+
+%div-is-img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  background-position: center;
+}
+.btnDark {
+  @extend %btnDark;
+}

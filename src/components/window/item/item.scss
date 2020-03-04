@@ -1,0 +1,50 @@
+@import "@styleTools";
+
+.animated-items-container {
+  animation-name: galil;
+  animation-iteration-count: infinite;
+  animation-direction: backwards;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  height: 100%;
+  .window-component__item {
+    @include flex-row(center);
+    grid-template-rows: max-content;
+    padding: 18px 0;
+    font-size: xx-large;
+  }
+}
+.window-component__item-edit {
+  @include flex-column(flex-start, center);
+  &__input-container {
+    @include grid(1fr max-content, 1fr, 10px, center, center);
+    input {
+      width: 80%;
+      padding: 5px;
+      margin: 10px;
+      border: 3px solid black;
+    }
+    &-remove {
+      background: red;
+      padding: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+  .window-component__item-edit__v {
+    font-size: 28px;
+    background: green;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+  }
+}
+
+@keyframes galil {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
